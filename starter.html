@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Join a Daily Meeting</title>
+    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+    <script>
+        async function createFrameAndJoinRoom() {
+        window.callFrame = window.DailyIframe.createFrame();
+        let username = document.getElementById('name').value;
+        await callFrame.join({ url: 'https://mkhan.daily.co/room-302', showLeaveButton: true, userName: username });
+    }
+</script>
+  </head>
+  <body>
+    <p id='name'>Asif</p>
+    <div>
+        <button onclick="createFrameAndJoinRoom()" style="background-color:aquamarine; border:1px solid; border-radius: 3px;padding: 5px;">Join</button>
+    </div>  
+</body>
+</html>
